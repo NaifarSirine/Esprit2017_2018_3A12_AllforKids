@@ -1,0 +1,75 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package edu.entites;
+
+import java.net.URL;
+import Utils.EtatDemandeAjoutGarderie;
+/**
+ *
+ * @author PC
+ */
+public class DemandeAjoutGarderie {
+    private int id;
+    private URL preuve;
+    private URL preuve2;
+    private EtatDemandeAjoutGarderie etat;
+    private int id_user;
+
+    public DemandeAjoutGarderie(int id, URL preuve, URL preuve2, EtatDemandeAjoutGarderie etat, int id_user) {
+        this.id = id;
+        this.preuve = preuve;
+        this.preuve2 = preuve2;
+        this.etat = etat;
+        this.id_user = id_user;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public URL getPreuve() {
+        return preuve;
+    }
+
+    public URL getPreuve2() {
+        return preuve2;
+    }
+
+    public EtatDemandeAjoutGarderie getEtat() {
+        return etat;
+    }
+
+    public int getId_user() {
+        return id_user;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setPreuve(URL preuve) {
+        this.preuve = preuve;
+    }
+
+    public void setPreuve2(URL preuve2) {
+        this.preuve2 = preuve2;
+    }
+
+    public void setEtat(EtatDemandeAjoutGarderie etat) {
+        this.etat = etat;
+    }
+
+    public void setId_user(int id_user) {
+        this.id_user = id_user;
+    }
+
+    @Override
+    public String toString() {
+        return "DemandeAjoutGarderie{" + "id=" + id + ", preuve=" + preuve + ", preuve2=" + preuve2 + ", etat=" + etat + ", id_user=" + id_user + '}';
+    }
+    
+    
+}
