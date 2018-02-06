@@ -13,12 +13,13 @@ import Utils.EtatDemandeAjoutGarderie;
  */
 public class DemandeAjoutGarderie {
     private int id;
-    private URL preuve;
-    private URL preuve2;
+    private String preuve;
+    private String preuve2;
     private EtatDemandeAjoutGarderie etat;
     private int id_user;
-
-    public DemandeAjoutGarderie(int id, URL preuve, URL preuve2, EtatDemandeAjoutGarderie etat, int id_user) {
+    
+    public DemandeAjoutGarderie(){}
+    public DemandeAjoutGarderie(int id, String preuve, String preuve2, EtatDemandeAjoutGarderie etat, int id_user) {
         this.id = id;
         this.preuve = preuve;
         this.preuve2 = preuve2;
@@ -30,11 +31,11 @@ public class DemandeAjoutGarderie {
         return id;
     }
 
-    public URL getPreuve() {
+    public String getPreuve() {
         return preuve;
     }
 
-    public URL getPreuve2() {
+    public String getPreuve2() {
         return preuve2;
     }
 
@@ -50,11 +51,11 @@ public class DemandeAjoutGarderie {
         this.id = id;
     }
 
-    public void setPreuve(URL preuve) {
+    public void setPreuve(String preuve) {
         this.preuve = preuve;
     }
 
-    public void setPreuve2(URL preuve2) {
+    public void setPreuve2(String preuve2) {
         this.preuve2 = preuve2;
     }
 

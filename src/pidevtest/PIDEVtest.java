@@ -6,9 +6,14 @@
 package pidevtest;
 
 import DataStorage.MyDB;
+import Services.DemandeAjoutGarderieService;
 import Services.EvaluationGarderieService;
+import Services.GarderieService;
 import Services.ProprietaireGarderieService;
+import Utils.EtatDemandeAjoutGarderie;
+import edu.entites.DemandeAjoutGarderie;
 import edu.entites.EvaluationGarderie;
+import edu.entites.Garderie;
 import edu.entites.ProprietaireGarderie;
 
 
@@ -35,7 +40,14 @@ public class PIDEVtest {
         EvaluationGarderie E1=new EvaluationGarderie(2,5,8,1);
         EvaluationGarderieService ES=new EvaluationGarderieService();
        // ES.ajouterEvaluationGarderie(E);
-        ES.modifierEvaluationGarderie(E1);
+       //ES.modifierEvaluationGarderie(E1);
+        DemandeAjoutGarderie D=new DemandeAjoutGarderie(0,"hello","hello2", EtatDemandeAjoutGarderie.EnTraitement,5);
+        DemandeAjoutGarderieService DAS=new DemandeAjoutGarderieService();
+        //DAS.ajouterDemandeAjoutGarderie(D);
+        //DAS.modifierEtat(1, EtatDemandeAjoutGarderie.Refusee);
+        Garderie G=new Garderie(0,"test","test","test","test","test","test","test",6,"tunis");
+        GarderieService GS=new GarderieService();
+        GS.ajouterGarderie(G);
     }
     
 }

@@ -5,6 +5,7 @@
  */
 package IServices;
 
+import Utils.EtatDemandeAjoutGarderie;
 import edu.entites.DemandeAjoutGarderie;
 
 /**
@@ -12,6 +13,6 @@ import edu.entites.DemandeAjoutGarderie;
  * @author PC
  */
 public interface IDemandeAjoutGarderie {
-    public void modifierEtat(int id,String etat);
+    public void modifierEtat(int id,EtatDemandeAjoutGarderie etat );
     public void ajouterDemandeAjoutGarderie(DemandeAjoutGarderie DAG);
 }
