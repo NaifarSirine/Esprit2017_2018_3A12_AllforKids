@@ -8,9 +8,12 @@ package Services;
 import DataStorage.MyDB;
 import IServices.IGarderie;
 import edu.entites.Garderie;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -71,17 +74,50 @@ public class GarderieService implements IGarderie {
     }
 
     @Override
-    public void supprimerGarderie(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void supprimerGarderie(Garderie G) {
+        String sql = "DELETE FROM `ecolegarderieclub` WHERE id=? ";
+         PreparedStatement statement;
+        try {
+       statement = cnx.prepareStatement(sql);
+       statement.setInt(1,G.getId());
+       int rowsInserted = statement.executeUpdate();
+        if (rowsInserted > 0) {
+            System.out.println("Propriétaire Garderie supprimé avec succées  ");}
+        } catch (SQLException ex) {
+            Logger.getLogger(Garderie.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @Override
     public Garderie rechercheGarderie(String nom) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Garderie P= new Garderie();
+        String sql = "SELECT * FROM `ecolegarderieclub` WHERE nom='"+nom+"'";
+        PreparedStatement statement;
+        try {
+            statement = cnx.prepareStatement(sql);
+            ResultSet result = statement.executeQuery(sql); 
+            while (result.next())
+            {
+
+                  P.setId(result.getInt("id"));                 
+                  P.setNom(result.getString("nom"));
+                  P.setLogo(result.getString("logo"));
+                  P.setDescription(result.getString("description"));
+                  P.setNumTel(result.getString("numTel"));
+                  P.setEmail(result.getString("email"));
+                  P.setAdresse(result.getString("adresse"));
+                  P.setSite(result.getString("site"));
+                  P.setId_prop(result.getInt("id_prop"));
+                  P.setVille(result.getString("ville"));     
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Garderie.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return P;
     }
 
     @Override
-    public List<Garderie> consulterGarderie() {
+    public ArrayList<Garderie> consulterGarderie() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

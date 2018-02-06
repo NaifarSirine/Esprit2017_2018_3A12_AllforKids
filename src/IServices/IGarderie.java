@@ -6,6 +6,7 @@
 package IServices;
 
 import edu.entites.Garderie;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -16,8 +17,8 @@ public interface IGarderie {
     
    public void ajouterGarderie(Garderie G);
    public void modifierGarderie (Garderie G);
-   public void supprimerGarderie (int id );
+   public void supprimerGarderie (Garderie G);
    public Garderie rechercheGarderie(String nom);
-   public List<Garderie> consulterGarderie ();
+   public ArrayList<Garderie> consulterGarderie ();
     
 }

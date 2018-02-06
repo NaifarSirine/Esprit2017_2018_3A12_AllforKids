@@ -23,7 +23,7 @@ public class Garderie {
     private String site ;
     private int id_prop ;
     private String ville ;
-
+    public Garderie() {}
     public Garderie(int id, String nom, String logo, String description, String numTel, String email, String adresse, String site, int id_prop, String ville) {
         this.id = id;
         this.nom = nom;
@@ -36,6 +36,9 @@ public class Garderie {
         this.id_prop = id_prop;
         this.ville = ville;
     }
+
+   
+        
 
     public int getId() {
         return id;

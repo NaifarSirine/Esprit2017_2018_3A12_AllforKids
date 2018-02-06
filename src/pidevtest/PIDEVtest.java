@@ -48,8 +48,10 @@ public class PIDEVtest {
         Garderie G=new Garderie(0,"test","test","test","test","test","test","test",6,"tunis");
         Garderie G1=new Garderie(2,"test","testallo","test","test","test","test","test",6,"Bizerte");
         GarderieService GS=new GarderieService();
-       // GS.ajouterGarderie(G);
-       GS.modifierGarderie(G1);
+         //GS.ajouterGarderie(G);
+        //GS.modifierGarderie(G1);
+        //GS.supprimerGarderie(G1);
+        System.out.println(GS.rechercheGarderie("test").toString());
     }
     
 }
