@@ -26,8 +26,7 @@ public class GarderieService implements IGarderie {
         {cnx = MyDB.getinstance().getConnexion(); }
     @Override
     public void ajouterGarderie(Garderie G) {
-        String sql = "INSERT INTO `ecolegarderieclub`(`nom`, `logo`, `type`, `description`, `numTel`, `email`, `adresse`, `site`, `id_prop`, `ville`) VALUES"
-                + "                                  (?,?,'Garderie',?,?,?,?,?,?,?)";
+        String sql = "INSERT INTO `ecolegarderieclub`(`nom`, `logo`, `type`, `description`, `numTel`, `email`, `adresse`, `site`, `id_prop`, `ville`) VALUES  (?,?,'Garderie',?,?,?,?,?,?,?)";
        PreparedStatement statement;
         try {
        statement = cnx.prepareStatement(sql);
@@ -50,7 +49,25 @@ public class GarderieService implements IGarderie {
 
     @Override
     public void modifierGarderie(Garderie G) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+        String sql = "UPDATE `ecolegarderieclub` SET `logo`=?,`description`=?,`numTel`=?,`email`=?,`adresse`=?,`site`=?,`ville`=? WHERE `id`=?";
+        PreparedStatement statement;
+        try {
+       statement = cnx.prepareStatement(sql);
+       statement.setString(1, G.getLogo());
+       statement.setString(2, G.getDescription());
+       statement.setString(3, G.getNumTel());
+       statement.setString(4, G.getEmail()); 
+       statement.setString(5, G.getAdresse());
+       statement.setString(6, G.getSite());
+       statement.setString(7, G.getVille());
+       statement.setInt(8, G.getId());
+       int rowsInserted = statement.executeUpdate();
+        if (rowsInserted > 0) {
+            System.out.println(" Garderie modifié avec succées  ");}
+        } catch (SQLException ex) {
+            Logger.getLogger(Garderie.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @Override

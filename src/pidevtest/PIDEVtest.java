@@ -46,8 +46,10 @@ public class PIDEVtest {
         //DAS.ajouterDemandeAjoutGarderie(D);
         //DAS.modifierEtat(1, EtatDemandeAjoutGarderie.Refusee);
         Garderie G=new Garderie(0,"test","test","test","test","test","test","test",6,"tunis");
+        Garderie G1=new Garderie(2,"test","testallo","test","test","test","test","test",6,"Bizerte");
         GarderieService GS=new GarderieService();
-        GS.ajouterGarderie(G);
+       // GS.ajouterGarderie(G);
+       GS.modifierGarderie(G1);
     }
     
 }
