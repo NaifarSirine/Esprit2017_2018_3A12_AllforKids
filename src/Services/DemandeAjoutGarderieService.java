@@ -11,7 +11,9 @@ import Utils.EtatDemandeAjoutGarderie;
 import edu.entites.DemandeAjoutGarderie;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -44,13 +46,14 @@ public class DemandeAjoutGarderieService implements IDemandeAjoutGarderie {
     @Override
     public void ajouterDemandeAjoutGarderie(DemandeAjoutGarderie DAG) {
         
-       String sql = "INSERT INTO `demande`(`preuve1`, `preuve2`, `etat`, `id_user`) VALUES (?,?,'EnTraitement',?)";
+       String sql = "INSERT INTO `demande`(`preuve1`, `preuve2`, `etat`, `id_user`,`id_egc`) VALUES (?,?,'EnTraitement',?,?)";
        PreparedStatement statement;
         try {
        statement = cnx.prepareStatement(sql);
        statement.setString(1, DAG.getPreuve());
        statement.setString(2, DAG.getPreuve2());
        statement.setInt(3, DAG.getId_user());
+       statement.setInt(4, DAG.getId_egc());
        int rowsInserted = statement.executeUpdate();
         if (rowsInserted > 0) {
             System.out.println("Demande Ajout Garderie  ajouté ");}
@@ -58,5 +61,31 @@ public class DemandeAjoutGarderieService implements IDemandeAjoutGarderie {
             Logger.getLogger(DemandeAjoutGarderie.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+
+    @Override
+    public ArrayList<DemandeAjoutGarderie> consulterDemandeAjoutGarderie() { //les demandes en traitement 
+     String sql="SELECT * FROM `demande` WHERE etat='"+EtatDemandeAjoutGarderie.EnTraitement+"'";
+     PreparedStatement statement;
+        ArrayList<DemandeAjoutGarderie> list = new ArrayList<DemandeAjoutGarderie>(); 
+       try {
+        statement = cnx.prepareStatement(sql);
+        ResultSet result = statement.executeQuery(sql); 
+
+        while (result.next()){
+            int id = result.getInt("id");
+            String preuve1 = result.getString("preuve1");
+            String preuve2 = result.getString("preuve2");
+            int id_user = result.getInt("id_user");
+            int id_egc = result.getInt("id_egc");
+            list.add(new DemandeAjoutGarderie(id,preuve1,preuve2,EtatDemandeAjoutGarderie.EnTraitement,id_user,id_egc)); 
+        }
+      
+      } catch (SQLException ex) {
+            Logger.getLogger(DemandeAjoutGarderie.class.getName()).log(Level.SEVERE, null, ex);}
+             return (list); 
+    }
+    
+    }
+    
     
 }

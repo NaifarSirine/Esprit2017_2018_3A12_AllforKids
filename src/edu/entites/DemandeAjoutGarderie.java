@@ -17,14 +17,16 @@ public class DemandeAjoutGarderie {
     private String preuve2;
     private EtatDemandeAjoutGarderie etat;
     private int id_user;
+    private int id_egc;
     
     public DemandeAjoutGarderie(){}
-    public DemandeAjoutGarderie(int id, String preuve, String preuve2, EtatDemandeAjoutGarderie etat, int id_user) {
+    public DemandeAjoutGarderie(int id, String preuve, String preuve2, EtatDemandeAjoutGarderie etat, int id_user,int id_egc) {
         this.id = id;
         this.preuve = preuve;
         this.preuve2 = preuve2;
         this.etat = etat;
         this.id_user = id_user;
+        this.id_egc=id_egc;
     }
 
     public int getId() {
@@ -67,10 +69,20 @@ public class DemandeAjoutGarderie {
         this.id_user = id_user;
     }
 
+    public int getId_egc() {
+        return id_egc;
+    }
+
+    public void setId_egc(int id_egc) {
+        this.id_egc = id_egc;
+    }
+
     @Override
     public String toString() {
-        return "DemandeAjoutGarderie{" + "id=" + id + ", preuve=" + preuve + ", preuve2=" + preuve2 + ", etat=" + etat + ", id_user=" + id_user + '}';
+        return "DemandeAjoutGarderie{" + "id=" + id + ", preuve=" + preuve + ", preuve2=" + preuve2 + ", etat=" + etat + ", id_user=" + id_user + ", id_egc=" + id_egc + '}';
     }
+
+    
     
     
 }

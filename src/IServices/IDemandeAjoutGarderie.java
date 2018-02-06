@@ -7,6 +7,7 @@ package IServices;
 
 import Utils.EtatDemandeAjoutGarderie;
 import edu.entites.DemandeAjoutGarderie;
+import java.util.ArrayList;
 
 /**
  *
@@ -15,4 +16,5 @@ import edu.entites.DemandeAjoutGarderie;
 public interface IDemandeAjoutGarderie {
     public void modifierEtat(int id,EtatDemandeAjoutGarderie etat );
     public void ajouterDemandeAjoutGarderie(DemandeAjoutGarderie DAG);
+    public ArrayList<DemandeAjoutGarderie> consulterDemandeAjoutGarderie();
 }

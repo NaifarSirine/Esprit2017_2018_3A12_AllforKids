@@ -10,7 +10,9 @@ import IServices.IEvaluationGarderie;
 import edu.entites.EvaluationGarderie;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -55,6 +57,31 @@ public class EvaluationGarderieService implements IEvaluationGarderie{
 
     }
 
-    
+    @Override
+    public ArrayList<EvaluationGarderie> consulterEvaluationGarderie(int id_eg) {
+       String sql= "SELECT * FROM `evaluation` WHERE `id_egc`'"+id_eg+"'";
+        PreparedStatement statement;
+        ArrayList<EvaluationGarderie> list = new ArrayList<EvaluationGarderie>(); 
+       try {
+        statement = cnx.prepareStatement(sql);
+        ResultSet result = statement.executeQuery(sql); 
+
+        while (result.next()){
+            int id = result.getInt("id");
+            int note = result.getInt("note");
+            int id_user = result.getInt("id_user");
+            int id_egc = result.getInt("id_egc");
+            int id_prop = result.getInt("id_prop");
+            list.add(new EvaluationGarderie(id,note,id_egc,id_prop)); 
+        }
+      
+      } catch (SQLException ex) {
+            Logger.getLogger(EvaluationGarderie.class.getName()).log(Level.SEVERE, null, ex);}
+             return (list); 
+    }
     
 }
+
+    
+    
+

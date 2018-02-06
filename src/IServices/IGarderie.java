@@ -7,7 +7,7 @@ package IServices;
 
 import edu.entites.Garderie;
 import java.util.ArrayList;
-import java.util.List;
+
 
 /**
  *
@@ -19,6 +19,8 @@ public interface IGarderie {
    public void modifierGarderie (Garderie G);
    public void supprimerGarderie (Garderie G);
    public Garderie rechercheGarderie(String nom);
-   public ArrayList<Garderie> consulterGarderie ();
+   public ArrayList<Garderie> consulterGarderie ();//**********
+   public ArrayList<Garderie> consulterGarderie (int id_prop);//****************
+   public ArrayList<Garderie> rechercherGarderie (String ville);//****************
     
 }

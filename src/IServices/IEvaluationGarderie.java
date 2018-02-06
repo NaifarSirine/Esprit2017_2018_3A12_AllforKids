@@ -6,6 +6,7 @@
 package IServices;
 
 import edu.entites.EvaluationGarderie;
+import java.util.ArrayList;
 
 /**
  *
@@ -14,6 +15,7 @@ import edu.entites.EvaluationGarderie;
 public interface IEvaluationGarderie {
     public void ajouterEvaluationGarderie(EvaluationGarderie E) ;
     public void modifierEvaluationGarderie(EvaluationGarderie E);
+    public ArrayList<EvaluationGarderie> consulterEvaluationGarderie(int id_egc);
     
     
 }
