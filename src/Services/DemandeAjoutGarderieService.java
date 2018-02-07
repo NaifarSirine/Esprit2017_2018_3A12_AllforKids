@@ -7,7 +7,7 @@ package Services;
 
 import DataStorage.MyDB;
 import IServices.IDemandeAjoutGarderie;
-import Utils.EtatDemandeAjoutGarderie;
+import Utils.EtatDemandeAjout;
 import edu.entites.DemandeAjoutGarderie;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -26,7 +26,7 @@ public class DemandeAjoutGarderieService implements IDemandeAjoutGarderie {
     public DemandeAjoutGarderieService()
         {cnx = MyDB.getinstance().getConnexion(); }
     @Override
-    public void modifierEtat(int id, EtatDemandeAjoutGarderie etat) {
+    public void modifierEtat(int id, EtatDemandeAjout etat) {
         String sql = "UPDATE `demande` SET `etat`=? WHERE id=?";
         PreparedStatement statement;
         try {
@@ -64,7 +64,7 @@ public class DemandeAjoutGarderieService implements IDemandeAjoutGarderie {
 
     @Override
     public ArrayList<DemandeAjoutGarderie> consulterDemandeAjoutGarderie() { //les demandes en traitement 
-     String sql="SELECT * FROM `demande` WHERE etat='"+EtatDemandeAjoutGarderie.EnTraitement+"'";
+     String sql="SELECT * FROM `demande` WHERE etat='"+EtatDemandeAjout.EnTraitement+"'";
      PreparedStatement statement;
         ArrayList<DemandeAjoutGarderie> list = new ArrayList<DemandeAjoutGarderie>(); 
        try {
@@ -77,7 +77,7 @@ public class DemandeAjoutGarderieService implements IDemandeAjoutGarderie {
             String preuve2 = result.getString("preuve2");
             int id_user = result.getInt("id_user");
             int id_egc = result.getInt("id_egc");
-            list.add(new DemandeAjoutGarderie(id,preuve1,preuve2,EtatDemandeAjoutGarderie.EnTraitement,id_user,id_egc)); 
+            list.add(new DemandeAjoutGarderie(id,preuve1,preuve2,EtatDemandeAjout.EnTraitement,id_user,id_egc)); 
         }
       
       } catch (SQLException ex) {
