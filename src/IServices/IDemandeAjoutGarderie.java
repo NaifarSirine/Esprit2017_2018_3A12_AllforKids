@@ -5,7 +5,7 @@
  */
 package IServices;
 
-import Utils.EtatDemandeAjoutGarderie;
+import Utils.EtatDemandeAjout;
 import edu.entites.DemandeAjoutGarderie;
 import java.util.ArrayList;
 
@@ -14,7 +14,7 @@ import java.util.ArrayList;
  * @author PC
  */
 public interface IDemandeAjoutGarderie {
-    public void modifierEtat(int id,EtatDemandeAjoutGarderie etat );
+    public void modifierEtat(int id,EtatDemandeAjout etat );
     public void ajouterDemandeAjoutGarderie(DemandeAjoutGarderie DAG);
     public ArrayList<DemandeAjoutGarderie> consulterDemandeAjoutGarderie();
 }

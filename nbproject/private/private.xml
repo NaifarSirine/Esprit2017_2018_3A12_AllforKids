@@ -3,11 +3,23 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Users/intel/Documents/GitHub/Esprit2017_2018_3A12_AllforKids/src/edu/entites/ProprietaireGarderie.java</file>
             <file>file:/C:/Users/intel/Documents/GitHub/Esprit2017_2018_3A12_AllforKids/src/Services/ProprietaireBoutiqueService.java</file>
             <file>file:/C:/Users/intel/Documents/GitHub/Esprit2017_2018_3A12_AllforKids/src/pidevtest/PIDEVtest_bechir.java</file>
             <file>file:/C:/Users/intel/Documents/GitHub/Esprit2017_2018_3A12_AllforKids/src/edu/entites/Boutique.java</file>
             <file>file:/C:/Users/intel/Documents/GitHub/Esprit2017_2018_3A12_AllforKids/src/pidevtest/PIDEVtest.java</file>
+=======
+            <file>file:/C:/Users/PC/Documents/GitHub/Esprit2017_2018_3A12_AllforKids/src/Services/DemandeBabySitterService.java</file>
+            <file>file:/C:/Users/PC/Documents/GitHub/Esprit2017_2018_3A12_AllforKids/src/Services/BabySitterService.java</file>
+            <file>file:/C:/Users/PC/Documents/GitHub/Esprit2017_2018_3A12_AllforKids/src/IServices/IGarderie.java</file>
+            <file>file:/C:/Users/PC/Documents/GitHub/Esprit2017_2018_3A12_AllforKids/src/IServices/IDemandeAjoutGarderie.java</file>
+            <file>file:/C:/Users/PC/Documents/GitHub/Esprit2017_2018_3A12_AllforKids/src/Services/DemandeAjoutGarderieService.java</file>
+            <file>file:/C:/Users/PC/Documents/GitHub/Esprit2017_2018_3A12_AllforKids/src/edu/entites/EvaluationGarderie.java</file>
+            <file>file:/C:/Users/PC/Documents/GitHub/Esprit2017_2018_3A12_AllforKids/src/edu/entites/DemandeAjoutGarderie.java</file>
+            <file>file:/C:/Users/PC/Documents/GitHub/Esprit2017_2018_3A12_AllforKids/src/Services/GarderieService.java</file>
+            <file>file:/C:/Users/PC/Documents/GitHub/Esprit2017_2018_3A12_AllforKids/src/Services/EvaluationGarderieService.java</file>
+>>>>>>> 0766e0b37a3797fde4ef03708243ef35db8a672c
         </group>
     </open-files>
 </project-private>

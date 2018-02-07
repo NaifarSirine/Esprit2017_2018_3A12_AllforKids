@@ -3,12 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package edu.entites;
 
 /**
  *
  * @author LENOVO
  */
+
 public class User {
     private int id ; 
     private String nom ; 
@@ -18,9 +20,15 @@ public class User {
     private String email ; 
     private String login ; 
     private String password ; 
+
+
+    public User() {
+    }
+
     
     
-    public User(){}
+   
+
 
     public User(int id, String nom, String prenom, String numTel, String adresse, String email, String login, String password) {
         this.id = id;
@@ -102,7 +110,6 @@ public class User {
         return "User{" + "id=" + id + ", nom=" + nom + ", prenom=" + prenom + ", numTel=" + numTel + ", adresse=" + adresse + ", email=" + email + ", login=" + login + ", password=" + password + '}';
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (obj == null) {
@@ -117,7 +124,4 @@ public class User {
         }
         return true;
     }
-    
- 
-
 }
