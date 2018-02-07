@@ -22,27 +22,20 @@ public class MyDB {
    
     public MyDB()
     {  
-         
-        
         try {
             cnx = DriverManager.getConnection(url,login,pwd);
-            System.out.println("connexion établie ! ");
-           
+            System.out.println("connexion établie ! ");           
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         } }
 
     public static MyDB getinstance()
     {if(instabne == null)
-    instabne = new MyDB(); 
-    
+    instabne = new MyDB();  
     return instabne; 
     }
-    
-    
+   
     public Connection getConnexion()
     {return cnx ; }
-    
-    
 
 }
