@@ -17,6 +17,6 @@ public interface ICommentaire {
     
     
      public void ajouterCommentaire(Commentaire cm);
-  public void supprimerCommentaire(Commentaire cm);
-   public ArrayList<Commentaire> consulterCommentaire(); 
+     public void supprimerCommentaire(Commentaire cm);
+     public ArrayList<Commentaire> consulterCommentaire(); 
 }
