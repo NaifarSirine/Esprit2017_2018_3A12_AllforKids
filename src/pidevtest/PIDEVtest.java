@@ -63,6 +63,51 @@ public class PIDEVtest {
 //        {
 //            System.out.println(G3.toString());
 //        }
-    }
+    
+                     Parent c1=new Parent(12, "ameni","lefi", "12542648", "tunis", "ameni@gmail.com", "ameni", "lefi","sirine");
+                     Parent c=new Parent(13, "ameni","lefi", "12542648", "tunis", "ameni@gmail.com", "ahmed", "lefi","sirine");
+                     ParentService ps = new ParentService();
+        
+                                                         // ps.ajouterCompte(c1);
+                                                         //  ps.modifierCompte(c);
+                                                         //  ps.supprimerCompte(c1);
+                                                         //System.out.println(ps.consulterCompte(13).toString());
+                 
+                     Sujet s = new  Sujet(14, "probleme probleme ",1);
+                     Sujet s1 = new  Sujet(6, "probleme avec ameni ",9);
+                     SujetService ss =new SujetService();
+
+                                                         //ss.ajouterSujet(s1);
+                                                         // ss.supprimerSujet(s1);
+
+                                                         /* ArrayList<Sujet> liste=new ArrayList<Sujet>();
+                                                            liste=ss.consulterSujet();
+                                                            for(Sujet S:liste){
+                                                            System.out.println(s.toString());
+                                                                                               }*/
+                                                                                              
+                                                         /* ArrayList<Sujet> list =new ArrayList<Sujet>();
+                                                            list=ss.rechercherSujets();
+                                                            for(Sujet d:list){
+                                                            System.out.println(s.toString());
+                                                                            }*/
+      
+      
+                   Commentaire cm1 = new Commentaire(0, "merci ",1,9);
+                   Commentaire cm = new Commentaire(0, "merci pour votre attention",1,13);
+                   CommentaireService cc = new CommentaireService();
+
+                                                         // cc.ajouterCommentaire(cm);
+                                                         // cc.ajouterCommentaire(cm1);
+                                                         // cc.supprimerCommentaire(cm);
+    
+                                                        /* ArrayList<Commentaire> liste=new ArrayList<Commentaire>();
+                                                           liste=cc.consulterCommentaire();{
+                                                           for(Commentaire b:liste)
+                                                           System.out.println(b.toString());
+                                                                              } */
+
+
+}
     
 }
