@@ -10,7 +10,7 @@ import Services.DemandeAjoutGarderieService;
 import Services.EvaluationGarderieService;
 import Services.GarderieService;
 import Services.ProprietaireGarderieService;
-import Utils.EtatDemandeAjoutGarderie;
+import Utils.EtatDemandeAjout;
 import edu.entites.DemandeAjoutGarderie;
 import edu.entites.EvaluationGarderie;
 import edu.entites.Garderie;

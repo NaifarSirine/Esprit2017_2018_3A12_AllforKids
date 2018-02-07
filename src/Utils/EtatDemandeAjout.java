@@ -9,6 +9,6 @@ package Utils;
  *
  * @author PC
  */
-public enum EtatDemandeAjoutGarderie {
+public enum EtatDemandeAjout {
     EnTraitement,Refusee,Acceptee;
 }

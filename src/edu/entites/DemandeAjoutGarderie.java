@@ -6,7 +6,7 @@
 package edu.entites;
 
 import java.net.URL;
-import Utils.EtatDemandeAjoutGarderie;
+import Utils.EtatDemandeAjout;
 /**
  *
  * @author PC
@@ -15,12 +15,12 @@ public class DemandeAjoutGarderie {
     private int id;
     private String preuve;
     private String preuve2;
-    private EtatDemandeAjoutGarderie etat;
+    private EtatDemandeAjout etat;
     private int id_user;
     private int id_egc;
     
     public DemandeAjoutGarderie(){}
-    public DemandeAjoutGarderie(int id, String preuve, String preuve2, EtatDemandeAjoutGarderie etat, int id_user,int id_egc) {
+    public DemandeAjoutGarderie(int id, String preuve, String preuve2, EtatDemandeAjout etat, int id_user,int id_egc) {
         this.id = id;
         this.preuve = preuve;
         this.preuve2 = preuve2;
@@ -41,7 +41,7 @@ public class DemandeAjoutGarderie {
         return preuve2;
     }
 
-    public EtatDemandeAjoutGarderie getEtat() {
+    public EtatDemandeAjout getEtat() {
         return etat;
     }
 
@@ -61,7 +61,7 @@ public class DemandeAjoutGarderie {
         this.preuve2 = preuve2;
     }
 
-    public void setEtat(EtatDemandeAjoutGarderie etat) {
+    public void setEtat(EtatDemandeAjout etat) {
         this.etat = etat;
     }
 

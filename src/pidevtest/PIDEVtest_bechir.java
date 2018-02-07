@@ -23,7 +23,7 @@ import static java.util.Collections.list;
  *
  * @author LENOVO
  */
-public class PIDEVtest {
+public class PIDEVtest_bechir {
      static Connection connexion;
     static Statement state;
     final static String url = "jdbc:mysql://localhost/pi_bd";

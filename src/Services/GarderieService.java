@@ -7,7 +7,7 @@ package Services;
 
 import DataStorage.MyDB;
 import IServices.IGarderie;
-import Utils.EtatDemandeAjoutGarderie;
+import Utils.EtatDemandeAjout;
 import edu.entites.Garderie;
 
 import java.sql.Connection;
@@ -92,7 +92,7 @@ public class GarderieService implements IGarderie {
     public Garderie rechercheGarderie(String nom) {
         Garderie P= new Garderie();
         String sql = "SELECT * FROM `ecolegarderieclub` JOIN `demande` on `demande`.`id_egc`=`ecolegarderieclub`.`id`"
-                + " WHERE `demande`.`etat`='"+EtatDemandeAjoutGarderie.Acceptee+"' AND `ecolegarderieclub`.`type`='Garderie' AND ecolegarderieclub.nom='"+nom+"'";
+                + " WHERE `demande`.`etat`='"+EtatDemandeAjout.Acceptee+"' AND `ecolegarderieclub`.`type`='Garderie' AND ecolegarderieclub.nom='"+nom+"'";
         PreparedStatement statement;
         try {
             statement = cnx.prepareStatement(sql);
@@ -119,7 +119,7 @@ public class GarderieService implements IGarderie {
 
     @Override
     public ArrayList<Garderie> consulterGarderie() {
-        String sql = "SELECT * FROM `ecolegarderieclub` JOIN `demande` on `demande`.`id_egc`=`ecolegarderieclub`.`id` WHERE`demande`.`etat`='"+EtatDemandeAjoutGarderie.Acceptee+"' AND `ecolegarderieclub`.`type`='Garderie'" ;
+        String sql = "SELECT * FROM `ecolegarderieclub` JOIN `demande` on `demande`.`id_egc`=`ecolegarderieclub`.`id` WHERE`demande`.`etat`='"+EtatDemandeAjout.Acceptee+"' AND `ecolegarderieclub`.`type`='Garderie'" ;
         PreparedStatement statement;
         ArrayList<Garderie> list = new ArrayList<Garderie>(); 
        try {
