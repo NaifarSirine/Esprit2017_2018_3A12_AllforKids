@@ -90,59 +90,60 @@ public class GarderieService implements IGarderie {
 
     @Override
     public Garderie rechercheGarderie(String nom) {
-//        Garderie P= new Garderie();
-//        String sql = "SELECT * FROM `ecolegarderieclub` join demande on demande.id_user=ecolegarderieclub.id_prop  WHERE nom='"+nom+"'";
-//        PreparedStatement statement;
-//        try {
-//            statement = cnx.prepareStatement(sql);
-//            ResultSet result = statement.executeQuery(sql); 
-//            while (result.next())
-//            {
-//                  P.setId(result.getInt("id"));                 
-//                  P.setNom(result.getString("nom"));
-//                  P.setLogo(result.getString("logo"));
-//                  P.setDescription(result.getString("description"));
-//                  P.setNumTel(result.getString("numTel"));
-//                  P.setEmail(result.getString("email"));
-//                  P.setAdresse(result.getString("adresse"));
-//                  P.setSite(result.getString("site"));
-//                  P.setId_prop(result.getInt("id_prop"));
-//                  P.setVille(result.getString("ville"));     
-//            }
-//        } catch (SQLException ex) {
-//            Logger.getLogger(Garderie.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-//        return P;
-return null;
+        Garderie P= new Garderie();
+        String sql = "SELECT * FROM `ecolegarderieclub` JOIN `demande` on `demande`.`id_egc`=`ecolegarderieclub`.`id`"
+                + " WHERE `demande`.`etat`='"+EtatDemandeAjoutGarderie.Acceptee+"' AND `ecolegarderieclub`.`type`='Garderie' AND ecolegarderieclub.nom='"+nom+"'";
+        PreparedStatement statement;
+        try {
+            statement = cnx.prepareStatement(sql);
+            ResultSet result = statement.executeQuery(sql); 
+            while (result.next())
+            {
+                  P.setId(result.getInt("id"));                 
+                  P.setNom(result.getString("nom"));
+                  P.setLogo(result.getString("logo"));
+                  P.setDescription(result.getString("description"));
+                  P.setNumTel(result.getString("numTel"));
+                  P.setEmail(result.getString("email"));
+                  P.setAdresse(result.getString("adresse"));
+                  P.setSite(result.getString("site"));
+                  P.setId_prop(result.getInt("id_prop"));
+                  P.setVille(result.getString("ville"));     
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Garderie.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return P;
+
     }
 
     @Override
     public ArrayList<Garderie> consulterGarderie() {
-//        String sql = "SELECT * FROM `ecolegarderieclub` join demande on demande.id_user=ecolegarderieclub.id_prop  WHERE  demande.etat='"+EtatDemandeAjoutGarderie.Acceptee+"'" ;
-//        PreparedStatement statement;
-//        ArrayList<Garderie> list = new ArrayList<Garderie>(); 
-//       try {
-//        statement = cnx.prepareStatement(sql);
-//        ResultSet result = statement.executeQuery(sql); 
-//
-//        while (result.next()){
-//            int id = result.getInt("id");
-//            String nom = result.getString("nom");
-//            String logo = result.getString("logo");
-//            String description = result.getString("description");
-//            String numTel = result.getString("numTel");
-//            String email = result.getString("email");
-//            String adresse = result.getString("adresse");
-//            String site = result.getString("site");
-//            int id_prop = result.getInt("id_prop");
-//            String ville = result.getString("ville");
-//            list.add(new Garderie(id,nom,logo,description,numTel,email,adresse,site,id_prop,ville)); 
-//        }
-//      
-//      } catch (SQLException ex) {
-//            Logger.getLogger(Garderie.class.getName()).log(Level.SEVERE, null, ex);}
-//             return (list); 
-                return null;  }
+        String sql = "SELECT * FROM `ecolegarderieclub` JOIN `demande` on `demande`.`id_egc`=`ecolegarderieclub`.`id` WHERE`demande`.`etat`='"+EtatDemandeAjoutGarderie.Acceptee+"' AND `ecolegarderieclub`.`type`='Garderie'" ;
+        PreparedStatement statement;
+        ArrayList<Garderie> list = new ArrayList<Garderie>(); 
+       try {
+        statement = cnx.prepareStatement(sql);
+        ResultSet result = statement.executeQuery(sql); 
+
+        while (result.next()){
+            int id = result.getInt("id");
+            String nom = result.getString("nom");
+            String logo = result.getString("logo");
+            String description = result.getString("description");
+            String numTel = result.getString("numTel");
+            String email = result.getString("email");
+            String adresse = result.getString("adresse");
+            String site = result.getString("site");
+            int id_prop = result.getInt("id_prop");
+            String ville = result.getString("ville");
+            list.add(new Garderie(id,nom,logo,description,numTel,email,adresse,site,id_prop,ville)); 
+        }
+      
+      } catch (SQLException ex) {
+            Logger.getLogger(Garderie.class.getName()).log(Level.SEVERE, null, ex);}
+             return (list); 
+                }
 //     //String sql = "SELECT  `ecolegarderieclub`.`nom`, `logo`, `type`, `description`, `ecolegarderieclub`.`numTel`, `ecolegarderieclub`.`email`, `ecolegarderieclub`.`adresse`, `ville`, `site`, `typeClub`, `user`.`nom` ,`user`.`prenom`,`user`.`numTel`,`user`.`email` "
 //              // + "FROM `ecolegarderieclub` Join `user` ON `user`.`id`=`ecolegarderieclub`.`id_prop` +
   @Override

@@ -6,15 +6,21 @@
 package pidevtest;
 
 import DataStorage.MyDB;
+import Services.CommentaireService;
 import Services.DemandeAjoutGarderieService;
 import Services.EvaluationGarderieService;
 import Services.GarderieService;
+import Services.ParentService;
 import Services.ProprietaireGarderieService;
+import Services.SujetService;
 import Utils.EtatDemandeAjoutGarderie;
+import edu.entites.Commentaire;
 import edu.entites.DemandeAjoutGarderie;
 import edu.entites.EvaluationGarderie;
 import edu.entites.Garderie;
+import edu.entites.Parent;
 import edu.entites.ProprietaireGarderie;
+import edu.entites.Sujet;
 import java.util.ArrayList;
 
 
@@ -63,6 +69,7 @@ public class PIDEVtest {
 //        {
 //            System.out.println(G3.toString());
 //        }
+
     
                      Parent c1=new Parent(12, "ameni","lefi", "12542648", "tunis", "ameni@gmail.com", "ameni", "lefi","sirine");
                      Parent c=new Parent(13, "ameni","lefi", "12542648", "tunis", "ameni@gmail.com", "ahmed", "lefi","sirine");
@@ -109,5 +116,9 @@ public class PIDEVtest {
 
 
 }
+
+         //System.out.println(GS.rechercheGarderie("soso").toString());
+    }
+
     
-}
+
