@@ -63,6 +63,7 @@ public class PIDEVtest {
 //        {
 //            System.out.println(G3.toString());
 //        }
+         //System.out.println(GS.rechercheGarderie("soso").toString());
     }
     
 }
