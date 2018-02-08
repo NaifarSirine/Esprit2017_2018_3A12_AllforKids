@@ -26,7 +26,7 @@ import java.util.List;
  * @author LENOVO
  * 
  */
-public class PIDEVtest {
+public class PIDEVtest_med {
  
    static Connection connexion;
     static Statement state;

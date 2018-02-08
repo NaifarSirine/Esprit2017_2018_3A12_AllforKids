@@ -6,27 +6,13 @@
 package pidevtest;
 
 import DataStorage.MyDB;
-<<<<<<< HEAD
+
 import Services.ProprietaireBoutiqueService;
 import edu.entites.Boutique;
 /**
  *
  * @author intel
  */
-public class PIDEVtest_bechir {
-    
-    
-      public static void main(String[] args) {
-        MyDB.getinstance(); 
-        
-          Boutique b1=new Boutique(0, "hajer", "harbaoui", "25145214", "sfax", "hajer@gmail.com", "hajer", "harbaoui", "113254784");
-    ProprietaireBoutiqueService PBS = new ProprietaireBoutiqueService();
-    PBS.ajouterCompte(b1);
-    
-    
-      }
-}
-=======
 import Services.CommentaireService;
 import Services.ParentService;
 import Services.SujetService;
@@ -107,4 +93,3 @@ public class PIDEVtest_bechir {
     
 
 
->>>>>>> 0766e0b37a3797fde4ef03708243ef35db8a672c
