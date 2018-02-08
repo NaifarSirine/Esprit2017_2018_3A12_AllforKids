@@ -30,12 +30,12 @@ public class PIDEVtest_sirine {
      */
     public static void main(String[] args) {
         MyDB.getinstance(); 
-//        ProprietaireGarderie PG =new ProprietaireGarderie(0,"soso","soso","97897512","Tunis","soso@esprit.tn","soso","hellososo","11223344");
-//        ProprietaireGarderie PG1 =new ProprietaireGarderie(7,"sosohoho","soso","97897512","Tunis","sosohoho@esprit.tn","soso","hellososohoho","11223344");
-//        ProprietaireGarderieService PGS=new ProprietaireGarderieService();
+     // ProprietaireGarderie PG =new ProprietaireGarderie(0,"soso","soso","97897512","Tunis","soso@esprit.tn","soso","hellososo","11223344");
+        ProprietaireGarderie PG1 =new ProprietaireGarderie(16,"sosohoho","soso","97897512","Tunis","sosohoho@esprit.tn","soso","hellososohoho","11223344");
+        ProprietaireGarderieService PGS=new ProprietaireGarderieService();
 //        PGS.ajouterCompte(PG);
 //        PGS.modifierCompte(PG1);
-//        PGS.supprimerCompte(PG1);
+     PGS.supprimerCompte(PG1);
 //         System.out.println(PGS.consulterCompte(16).toString());
 //        EvaluationGarderie E=new EvaluationGarderie(0,15,16,1);
 //        EvaluationGarderie E1=new EvaluationGarderie(5,5,16,1);

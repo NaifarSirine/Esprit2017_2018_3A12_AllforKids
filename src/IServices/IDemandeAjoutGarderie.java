@@ -17,4 +17,5 @@ public interface IDemandeAjoutGarderie {
     public void modifierEtat(int id,EtatDemandeAjout etat );
     public void ajouterDemandeAjoutGarderie(DemandeAjoutGarderie DAG);
     public ArrayList<DemandeAjoutGarderie> consulterDemandeAjoutGarderie();
+    public int compterNombreDemandeEnTraitement();
 }

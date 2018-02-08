@@ -59,7 +59,7 @@ public class EvaluationGarderieService implements IEvaluationGarderie{
 
     @Override
     public ArrayList<EvaluationGarderie> consulterEvaluationGarderie(int id_eg) {
-       String sql= "SELECT * FROM `evaluation` WHERE `id_egc`'"+id_eg+"'";
+       String sql= "SELECT * FROM `evaluation` WHERE `id_egc`'"+id_eg+"' order by note DESC ";
         PreparedStatement statement;
         ArrayList<EvaluationGarderie> list = new ArrayList<EvaluationGarderie>(); 
        try {

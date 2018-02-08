@@ -13,6 +13,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -64,7 +65,7 @@ public class DemandeAjoutGarderieService implements IDemandeAjoutGarderie {
 
     @Override
     public ArrayList<DemandeAjoutGarderie> consulterDemandeAjoutGarderie() { //les demandes en traitement 
-     String sql="SELECT * FROM `demande` WHERE etat='"+EtatDemandeAjout.EnTraitement+"'";
+     String sql="SELECT * FROM `demande` JOIN `ecolegarderieclub` on `ecolegarderieclub`.`id`=`demande`.`id_egc` WHERE `ecolegarderieclub`.`type`='Garderie' AND `demande`.`etat`='"+EtatDemandeAjout.EnTraitement+"'";
      PreparedStatement statement;
         ArrayList<DemandeAjoutGarderie> list = new ArrayList<DemandeAjoutGarderie>(); 
        try {
@@ -84,8 +85,24 @@ public class DemandeAjoutGarderieService implements IDemandeAjoutGarderie {
             Logger.getLogger(DemandeAjoutGarderie.class.getName()).log(Level.SEVERE, null, ex);}
              return (list); 
     }
-    
-    }
+ 
+    @Override
+          public int compterNombreDemandeEnTraitement() {
+              String sql = "SELECT COUNT(*) FROM `demande` JOIN `ecolegarderieclub` on `ecolegarderieclub`.`id`=`demande`.`id_egc` WHERE `ecolegarderieclub`.`type`='Garderie' AND `demande`.`etat`='"+EtatDemandeAjout.EnTraitement+"'";
+       int nb = 0 ; 
+       try {
+        Statement statement = cnx.createStatement();
+        ResultSet result = statement.executeQuery(sql);
+
+        while (result.next()){
+            nb = result.getInt("COUNT(*)");
+        }
+      
+      } catch (SQLException ex) {
+            Logger.getLogger(BabySitterService.class.getName()).log(Level.SEVERE, null, ex);}
+             return (nb); 
+    }    
+}
     
     
 
