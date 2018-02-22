@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Presentation.ValidationAbonnementController">
+    <children>
+      <ImageView fitHeight="657.0" fitWidth="1004.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Utils/images/sheep-moss-meadow-eyes-50698.jpeg" />
+         </image>
+      </ImageView>
+      <BorderPane prefHeight="657.0" prefWidth="958.0">
+         <center>
+            <TableView fx:id="table_parents" prefHeight="405.0" prefWidth="519.0" BorderPane.alignment="CENTER">
+              <columns>
+                <TableColumn fx:id="col_nom" prefWidth="99.0" text="Nom" />
+                  <TableColumn fx:id="col_prenom" prefWidth="115.0" text="Prenom" />
+                  <TableColumn fx:id="col_adresse" prefWidth="146.0" text="Adresse" />
+                  <TableColumn fx:id="col_Email" prefWidth="157.0" text="Email" />
+              </columns>
+            </TableView>
+         </center>
+         <right>
+            <GridPane prefHeight="622.0" prefWidth="439.0" BorderPane.alignment="CENTER">
+              <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="206.0" minWidth="1.0" prefWidth="1.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="235.0" minWidth="10.0" prefWidth="143.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="284.0" minWidth="10.0" prefWidth="157.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="284.0" minWidth="10.0" prefWidth="61.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="284.0" minWidth="10.0" prefWidth="102.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="112.0" minHeight="0.0" prefHeight="47.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="341.0" minHeight="10.0" prefHeight="49.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="291.0" minHeight="0.0" prefHeight="57.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="167.0" minHeight="10.0" prefHeight="68.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="135.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="132.0" minHeight="0.0" prefHeight="61.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="227.0" minHeight="10.0" prefHeight="88.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="227.0" minHeight="10.0" prefHeight="88.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="227.0" minHeight="10.0" prefHeight="53.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="227.0" minHeight="10.0" prefHeight="80.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="227.0" minHeight="10.0" prefHeight="110.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label fx:id="garderie" text="Garderie :" textFill="WHITE" GridPane.columnIndex="1">
+                     <font>
+                        <Font name="kindergarten" size="31.0" />
+                     </font></Label>
+                  <Label fx:id="Email" text="Email" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="kindergarten" size="16.0" />
+                     </font></Label>
+                  <Label fx:id="lab_email" text="Label" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                  <HBox prefHeight="131.0" prefWidth="149.0" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                  <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="5">
+                     <children>
+                        <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="34.0" style="-fx-background-color: transparent;" />
+                     </children></HBox>
+                  <Label fx:id="nom" text="Nom:" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="kindergarten" size="16.0" />
+                     </font></Label>
+                  <Label fx:id="lab_nom" text="Label" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <Label fx:id="description" text="Description :" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="kindergarten" size="17.0" />
+                     </font></Label>
+                  <Label fx:id="lab_description" text="Label" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                  <Button fx:id="btn_accepter" mnemonicParsing="false" onAction="#accepter" prefHeight="53.0" prefWidth="57.0" style="-fx-background-color: transparent;" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                     <graphic>
+                        <ImageView fitHeight="45.0" fitWidth="77.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Utils/images/Add%20to%20Favorites_48px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btn_refuser" mnemonicParsing="false" onAction="#refuser" prefHeight="52.0" prefWidth="47.0" style="-fx-background-color: transparent;" GridPane.columnIndex="4" GridPane.rowIndex="3">
+                     <graphic>
+                        <ImageView fitHeight="64.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Utils/images/Minus_48px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </GridPane>
+         </right>
+         <bottom>
+            <GridPane BorderPane.alignment="CENTER">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="474.0" minWidth="10.0" prefWidth="121.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="837.0" minWidth="10.0" prefWidth="837.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="25.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="60.0" minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Button fx:id="btn_retour" mnemonicParsing="false" onAction="#retour" prefHeight="59.0" prefWidth="52.0" style="-fx-background-color: transparent;" GridPane.rowIndex="2">
+                     <graphic>
+                        <ImageView fitHeight="70.0" fitWidth="51.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Utils/images/Back_48px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </GridPane>
+         </bottom>
+      </BorderPane>
+   </children>
+</AnchorPane>

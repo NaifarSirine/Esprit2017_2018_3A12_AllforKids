@@ -8,10 +8,13 @@ package Services;
 import DataStorage.MyDB;
 import IServices.IEvaluationGarderie;
 import edu.entites.EvaluationGarderie;
+import edu.entites.Garderie;
+import edu.entites.Parent;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -79,8 +82,46 @@ public class EvaluationGarderieService implements IEvaluationGarderie{
             Logger.getLogger(EvaluationGarderie.class.getName()).log(Level.SEVERE, null, ex);}
              return (list); 
     }
+
+    @Override
+    public float CalculerMoyenneNote(int id_garderie) {
+        String sql= "SELECT AVG(note) as 'moyenne' FROM `evaluation` WHERE id_egc='"+id_garderie+"'";
+        float moyenne=0;
+        PreparedStatement statement;
+         try {
+        statement = cnx.prepareStatement(sql);
+        ResultSet result = statement.executeQuery(sql); 
+
+        while (result.next()){
+            moyenne=result.getFloat("moyenne");
+        }
+      
+      } catch (SQLException ex) {
+            Logger.getLogger(EvaluationGarderie.class.getName()).log(Level.SEVERE, null, ex);}
+              return moyenne;
+    }
+
+    @Override
+    public EvaluationGarderie RechercheEvaluationParent(Parent p, Garderie g) {
+        String sql = "SELECT * FROM `evaluation` WHERE `id_user`='"+p.getId()+"' AND `id_egc` ='"+g.getId()+"'";
+        EvaluationGarderie ag = new EvaluationGarderie();
+       try {
+        Statement statement = cnx.createStatement();
+        ResultSet result = statement.executeQuery(sql);
+        while (result.next()){
+            int id = result.getInt("id");
+            int id_user = result.getInt("id_user");
+            int id_egc= result.getInt("id_egc");
+            String note = result.getString("note");
+            
+        }
+      } catch (SQLException ex) {
+            Logger.getLogger(EvaluationGarderieService.class.getName()).log(Level.SEVERE, null, ex);}
+             return (ag); 
+    }
+    }
     
-}
+
 
     
     

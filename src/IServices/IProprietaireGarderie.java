@@ -6,6 +6,7 @@
 package IServices;
 
 import edu.entites.ProprietaireGarderie;
+import java.util.ArrayList;
 
 /**
  *
@@ -17,4 +18,6 @@ public interface IProprietaireGarderie {
    public void modifierCompte (ProprietaireGarderie PG );
    public void supprimerCompte (ProprietaireGarderie PG  );
    public ProprietaireGarderie consulterCompte (int id);
+   public ArrayList<ProprietaireGarderie> listerProprietaireGarderie();
+   public boolean login_existe(String login);
 }

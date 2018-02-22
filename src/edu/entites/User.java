@@ -20,11 +20,20 @@ public class User {
     private String email ; 
     private String login ; 
     private String password ; 
-
+    private String role;
+    public static User MyUser=new User();
 
     public User() {
     }
 
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+    
     
     
    

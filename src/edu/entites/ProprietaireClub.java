@@ -16,6 +16,10 @@ public class ProprietaireClub extends User{
     }
     public  ProprietaireClub (){}
 
+    public ProprietaireClub(int i, String med, String hammami, String string, String ruekhayredine, String medgmailcom, String rafael, String rafael0, String club) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     @Override
     public String toString() {
         return super.toString();

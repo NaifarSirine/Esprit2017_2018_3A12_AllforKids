@@ -5,6 +5,8 @@
  */
 package edu.entites;
 
+import Services.GarderieService;
+import Services.ProprietaireGarderieService;
 import java.net.URL;
 import Utils.EtatDemandeAjout;
 /**
@@ -16,17 +18,18 @@ public class DemandeAjoutGarderie {
     private String preuve;
     private String preuve2;
     private EtatDemandeAjout etat;
-    private int id_user;
-    private int id_egc;
-    
+    private ProprietaireGarderie Proprietaire = new ProprietaireGarderie();
+    private ProprietaireGarderieService ps=new ProprietaireGarderieService();
+    private Garderie Garderie= new Garderie();
+    private GarderieService gs=new GarderieService();
     public DemandeAjoutGarderie(){}
     public DemandeAjoutGarderie(int id, String preuve, String preuve2, EtatDemandeAjout etat, int id_user,int id_egc) {
         this.id = id;
         this.preuve = preuve;
         this.preuve2 = preuve2;
         this.etat = etat;
-        this.id_user = id_user;
-        this.id_egc=id_egc;
+        Proprietaire= ps.consulterCompte(id_user);
+        Garderie=gs.consulterGarderieID(id_egc);
     }
 
     public int getId() {
@@ -46,7 +49,7 @@ public class DemandeAjoutGarderie {
     }
 
     public int getId_user() {
-        return id_user;
+        return Proprietaire.getId();
     }
 
     public void setId(int id) {
@@ -66,20 +69,23 @@ public class DemandeAjoutGarderie {
     }
 
     public void setId_user(int id_user) {
-        this.id_user = id_user;
+       this.Proprietaire.setId(id_user); 
     }
 
     public int getId_egc() {
-        return id_egc;
+        return this.Garderie.getId();
     }
 
     public void setId_egc(int id_egc) {
-        this.id_egc = id_egc;
+        this.Garderie.setId(id_egc);
     }
+
+    public Garderie getGarderie() {
+      return this.Garderie;    }
 
     @Override
     public String toString() {
-        return "DemandeAjoutGarderie{" + "id=" + id + ", preuve=" + preuve + ", preuve2=" + preuve2 + ", etat=" + etat + ", id_user=" + id_user + ", id_egc=" + id_egc + '}';
+        return "DemandeAjoutGarderie{" + "id=" + id + ", preuve=" + preuve + ", preuve2=" + preuve2 + ", etat=" + etat + ", Proprietaire=" + Proprietaire + ", ps=" + ps + ", Garderie=" + Garderie + ", gs=" + gs + '}';
     }
 
     

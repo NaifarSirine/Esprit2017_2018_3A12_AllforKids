@@ -12,6 +12,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -110,6 +112,44 @@ public class ProprietaireGarderieService implements IProprietaireGarderie{
         return P;
         
     } 
+    @Override
+    public ArrayList<ProprietaireGarderie> listerProprietaireGarderie() {
+      String sql = "SELECT * FROM user  ";
+       ArrayList<ProprietaireGarderie> list = new ArrayList<ProprietaireGarderie>(); 
+       try {
+        Statement statement = cnx.createStatement();
+        ResultSet result = statement.executeQuery(sql);
+
+        while (result.next()){
+            int id = result.getInt("id");
+            String nom = result.getString("nom");
+            String prenom = result.getString("prenom");
+            String numTel = result.getString("numTel");
+            String adresse = result.getString("adresse");
+            String email = result.getString("email");
+            String login = result.getString("login");
+            String password = result.getString("password");
+            String cin = result.getString("cin");
+            String cv = result.getString("cv");
+            String photo = result.getString("photo");
+            list.add(new ProprietaireGarderie(id, nom, prenom, numTel, adresse, email, login, password, cin)); 
+        }
+      
+      } catch (SQLException ex) {
+            Logger.getLogger(ProprietaireGarderieService.class.getName()).log(Level.SEVERE, null, ex);}
+             return (list); 
+    }
+    @Override
+    public boolean login_existe(String login) {
+       boolean result = false ; 
+       for(ProprietaireGarderie p:listerProprietaireGarderie() )
+       {if (p.getLogin().equals(login))
+           result = true ; 
+           }
+       return (result); 
+    }
+
+  
       
     
     

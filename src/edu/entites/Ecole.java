@@ -20,7 +20,6 @@ public class Ecole {
     String email;
     String adresse;
     String site;
-    //String typeClub;
     int id_prop;
     String ville;
 

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="519.0" prefWidth="869.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Presentation.AjoutGarderieController">
+   <children>
+      <ImageView fitHeight="645.0" fitWidth="978.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Utils/images/2.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="420.0" layoutY="126.0" prefHeight="44.0" prefWidth="397.0" text=" Ajouter une nouvelle garderie">
+         <font>
+            <Font name="kindergarten" size="27.0" />
+         </font>
+      </Label>
+      <Label layoutX="401.0" layoutY="207.0" text="Nom :">
+         <font>
+            <Font name="kindergarten" size="15.0" />
+         </font></Label>
+      <TextField fx:id="Nom" layoutX="459.0" layoutY="205.0" prefHeight="25.0" prefWidth="151.0" promptText="Nom" style="-fx-background-color: transparent;" />
+      <Label layoutX="398.0" layoutY="244.0" text="Description :">
+         <font>
+            <Font name="kindergarten" size="15.0" />
+         </font></Label>
+      <TextArea fx:id="Description" layoutX="488.0" layoutY="244.0" prefHeight="38.0" prefWidth="240.0" promptText="Desceiption" />
+      <Label layoutX="399.0" layoutY="296.0" text="Logo :">
+         <font>
+            <Font name="kindergarten" size="15.0" />
+         </font></Label>
+      <Button fx:id="Logo" layoutX="443.0" layoutY="285.0" mnemonicParsing="false" onAction="#Logo2" prefHeight="25.0" prefWidth="37.0" style="-fx-background-color: transparent;">
+         <graphic>
+            <ImageView fitHeight="63.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Utils/images/Attach_32px.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Label layoutX="399.0" layoutY="342.0" text="Email :">
+         <font>
+            <Font name="kindergarten" size="15.0" />
+         </font></Label>
+      <TextField fx:id="Email" layoutX="456.0" layoutY="339.0" prefHeight="25.0" prefWidth="151.0" promptText="Email" style="-fx-background-color: transparent;" />
+      <Label layoutX="402.0" layoutY="384.0" text="Site :">
+         <font>
+            <Font name="kindergarten" size="15.0" />
+         </font></Label>
+      <TextField fx:id="Site" layoutX="458.0" layoutY="381.0" prefHeight="25.0" prefWidth="151.0" promptText="Site" style="-fx-background-color: transparent;" />
+      <Label layoutX="403.0" layoutY="421.0" text="Téléphone :">
+         <font>
+            <Font name="kindergarten" size="15.0" />
+         </font></Label>
+      <TextField fx:id="Tel" layoutX="482.0" layoutY="418.0" prefHeight="25.0" prefWidth="167.0" promptText="Téléphone" style="-fx-background-color: transparent;" />
+      <Label layoutX="408.0" layoutY="454.0" text="Adresse :">
+         <font>
+            <Font name="kindergarten" size="15.0" />
+         </font></Label>
+      <TextField fx:id="Adresse" layoutX="482.0" layoutY="452.0" prefHeight="25.0" prefWidth="167.0" promptText="Adresse" style="-fx-background-color: transparent;" />
+      <Label layoutX="649.0" layoutY="454.0" text="Ville :">
+         <font>
+            <Font name="kindergarten" size="15.0" />
+         </font></Label>
+      <ComboBox fx:id="Ville" layoutX="702.0" layoutY="453.0" prefHeight="25.0" prefWidth="100.0" style="-fx-background-color: transparent;" />
+      <Label layoutX="138.0" layoutY="318.0" text="Preuves :">
+         <font>
+            <Font name="kindergarten" size="15.0" />
+         </font></Label>
+      <Label layoutX="189.0" layoutY="356.0" text="Preuve 1: " />
+      <Button fx:id="Pr1" layoutX="256.0" layoutY="348.0" mnemonicParsing="false" onAction="#Preuve1" prefHeight="25.0" prefWidth="37.0" style="-fx-background-color: transparent;">
+         <graphic>
+            <ImageView fitHeight="25.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Utils/images/Attach_32px.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <Label layoutX="190.0" layoutY="398.0" prefHeight="17.0" prefWidth="62.0" text="Preuve 2: " />
+      <Button fx:id="Pr2" layoutX="256.0" layoutY="389.0" mnemonicParsing="false" onAction="#Preuve2" prefHeight="25.0" prefWidth="31.0" style="-fx-background-color: transparent;">
+         <graphic>
+            <ImageView fitHeight="26.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Utils/images/Attach_32px.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <Button fx:id="Ajouter" layoutX="850.0" layoutY="482.0" mnemonicParsing="false" onAction="#Ajouter" prefHeight="44.0" prefWidth="52.0" style="-fx-background-color: transparent;">
+         <graphic>
+            <ImageView fitHeight="41.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Utils/images/Ok_48px.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="Annuler" layoutX="907.0" layoutY="482.0" mnemonicParsing="false" onAction="#Annuler" prefHeight="44.0" prefWidth="44.0" style="-fx-background-color: transparent;">
+         <graphic>
+            <ImageView fitHeight="43.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Utils/images/Cancel_96px.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Label fx:id="label_erreur" layoutX="238.0" layoutY="490.0" prefHeight="17.0" prefWidth="526.0" textFill="RED" />
+   </children>
+</AnchorPane>

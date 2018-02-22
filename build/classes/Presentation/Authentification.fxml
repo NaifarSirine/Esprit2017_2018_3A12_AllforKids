@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="442.0" prefWidth="644.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Presentation.AuthentificationController">
+   <children>
+      <ImageView fitHeight="492.0" fitWidth="762.0" layoutY="-12.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Utils/images/pexels-photo-207891.jpeg" />
+         </image>
+      </ImageView>
+      <TextField fx:id="Login" layoutX="114.0" layoutY="209.0" prefHeight="36.0" prefWidth="172.0" promptText="login" />
+      <PasswordField fx:id="Password" layoutX="114.0" layoutY="261.0" prefHeight="36.0" prefWidth="172.0" promptText="Password" />
+      <Button layoutX="244.0" layoutY="300.0" mnemonicParsing="false" onAction="#Connecter" prefHeight="36.0" prefWidth="36.0" style="-fx-background-color: transparent;">
+         <graphic>
+            <ImageView fitHeight="45.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Utils/images/Checked_52px.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <Hyperlink layoutX="226.0" layoutY="339.0" onAction="#inscription" text="Inscrivez-vous !" textFill="WHITE" />
+      <ImageView fitHeight="127.0" fitWidth="230.0" layoutX="87.0" layoutY="72.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Utils/images/Logo.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="68.0" layoutY="209.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Utils/images/Name_52px.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="68.0" layoutY="261.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Utils/images/Password%201_52px.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="label_erreur" layoutX="114.0" layoutY="182.0" prefHeight="17.0" prefWidth="172.0" textFill="RED">
+         <font>
+            <Font size="11.0" />
+         </font></Label>
+   </children>
+</AnchorPane>

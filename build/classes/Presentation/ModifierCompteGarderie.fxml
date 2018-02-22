@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="402.0" prefWidth="311.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Presentation.ModifierCompteGarderieController">
+   <children>
+      <ImageView fitHeight="544.0" fitWidth="758.0" layoutY="-11.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Utils/images/pexels-photo-164642.jpeg" />
+         </image>
+      </ImageView>
+      <TextField fx:id="Telephone" layoutX="318.0" layoutY="203.0" promptText="Tel" style="-fx-background-color: transparent;" />
+      <TextField fx:id="Adresse" layoutX="316.0" layoutY="234.0" promptText="Adresse" style="-fx-background-color: transparent;" />
+      <TextField fx:id="Email" layoutX="317.0" layoutY="263.0" promptText="Email" style="-fx-background-color: transparent;" />
+      <TextField fx:id="Login" layoutX="317.0" layoutY="297.0" promptText="Login" style="-fx-background-color: transparent;" />
+      <Label layoutX="210.0" layoutY="128.0" prefHeight="60.0" prefWidth="363.0" text="Modifier mon compte" textFill="#d7970c">
+         <font>
+            <Font name="kindergarten" size="33.0" />
+         </font>
+      </Label>
+      <Button fx:id="CONN" layoutX="498.0" layoutY="443.0" mnemonicParsing="false" onAction="#Consulter" prefWidth="62.0" style="-fx-background-color: transparent;">
+         <graphic>
+            <ImageView fitHeight="48.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Utils/images/Ok_48px.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <Button fx:id="ANNU" layoutX="544.0" layoutY="444.0" mnemonicParsing="false" onAction="#Annuler" prefHeight="54.0" prefWidth="31.0" style="-fx-background-color: transparent;">
+         <graphic>
+            <ImageView fitHeight="46.0" fitWidth="88.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Utils/images/Cancel_96px.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <Label layoutX="167.0" layoutY="204.0" text="Numero de téléphone :">
+         <font>
+            <Font name="kindergarten" size="15.0" />
+         </font></Label>
+      <Label layoutX="257.0" layoutY="234.0" text="Adresse :">
+         <font>
+            <Font name="kindergarten" size="15.0" />
+         </font></Label>
+      <Label layoutX="274.0" layoutY="265.0" text="Email :">
+         <font>
+            <Font name="kindergarten" size="15.0" />
+         </font></Label>
+      <Label layoutX="273.0" layoutY="300.0" text="Login :">
+         <font>
+            <Font name="kindergarten" size="15.0" />
+         </font></Label>
+      <Label layoutX="253.0" layoutY="334.0" text="Password :">
+         <font>
+            <Font name="kindergarten" size="15.0" />
+         </font></Label>
+      <Label layoutX="196.0" layoutY="366.0" text="Confirm Password :">
+         <font>
+            <Font name="kindergarten" size="15.0" />
+         </font></Label>
+      <PasswordField fx:id="Password" layoutX="320.0" layoutY="332.0" promptText="Password" style="-fx-background-color: transparent;" />
+      <PasswordField fx:id="Password2" layoutX="323.0" layoutY="363.0" promptText="Password" style="-fx-background-color: transparent;" />
+      <Label fx:id="label_erreur" layoutX="259.0" layoutY="398.0" prefHeight="17.0" prefWidth="242.0" textFill="RED" />
+   </children>
+</AnchorPane>

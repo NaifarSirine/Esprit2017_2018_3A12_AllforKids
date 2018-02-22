@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="454.0" prefWidth="652.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Presentation.MenuPGController">
+   <children>
+      <ImageView fitHeight="562.0" fitWidth="818.0" layoutY="-14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Utils/images/garderie-enfant-generique.JPG" />
+         </image>
+      </ImageView>
+      <Label layoutX="124.0" layoutY="113.0" prefHeight="61.0" prefWidth="537.0" text="Bienvenue à l'espace propriétaire garderie" textAlignment="JUSTIFY" textFill="#802e0a">
+         <font>
+            <Font name="kindergarten" size="27.0" />
+         </font>
+      </Label>
+      <Button fx:id="ConsulterMesGarderies" layoutX="150.0" layoutY="294.0" mnemonicParsing="false" onAction="#MesGarderies" prefHeight="50.0" prefWidth="234.0" style="-fx-background-color: Transparent;" text=" Gérer mes Garderies" textFill="#802e0a">
+         <font>
+            <Font name="kindergarten" size="17.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="43.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Utils/images/Baby%20Face_96px.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="Demande" layoutX="383.0" layoutY="228.0" mnemonicParsing="false" onAction="#ConsulterDemande" prefHeight="50.0" prefWidth="278.0" style="-fx-background-color: transparent;" text="Consulter les demandes " textFill="#802e0a">
+         <font>
+            <Font name="kindergarten" size="17.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="38.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Utils/images/Dashboard_96px.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="Abonnement" layoutX="390.0" layoutY="292.0" mnemonicParsing="false" onAction="#Abonnement" prefHeight="54.0" prefWidth="263.0" style="-fx-background-color: transparent;" text="Gérer les abonnements" textFill="#802e0a">
+         <font>
+            <Font name="kindergarten" size="17.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="81.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Utils/images/User%20Group_96px.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <Button fx:id="Deconnecter" layoutX="762.0" layoutY="494.0" mnemonicParsing="false" onAction="#Deconnecter" prefHeight="39.0" prefWidth="47.0" style="-fx-background-color: transparent;">
+         <graphic>
+            <ImageView fitHeight="38.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Utils/images/Shutdown_48px.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <Button fx:id="ConsulterCompte" layoutX="159.0" layoutY="222.0" mnemonicParsing="false" onAction="#ConsulterCompte" prefHeight="61.0" prefWidth="209.0" style="-fx-background-color: transparent;" text="Gérer mon compte" textFill="#802e0a">
+         <font>
+            <Font name="kindergarten" size="17.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="39.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Utils/images/Name%20Tag_96px.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+   </children>
+</AnchorPane>

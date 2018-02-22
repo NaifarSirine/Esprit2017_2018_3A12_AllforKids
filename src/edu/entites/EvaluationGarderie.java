@@ -5,6 +5,9 @@
  */
 package edu.entites;
 
+import Services.GarderieService;
+import Services.ParentService;
+
 /**
  *
  * @author PC
@@ -12,15 +15,17 @@ package edu.entites;
 public class EvaluationGarderie {
     private int id;
     private int note;
-    private int id_user;
-    private int id_egc;
+    private Parent Parent =new Parent();
+    private ParentService ps=new ParentService();
+    private Garderie Garderie=new Garderie();
+    private GarderieService gs= new GarderieService();
    
     public EvaluationGarderie(){}
     public EvaluationGarderie(int id, int note, int id_user, int id_egc) {
         this.id = id;
         this.note = note;
-        this.id_user = id_user;
-        this.id_egc = id_egc;
+        this.Parent= ps.consulterCompte(id_user);
+        this.Garderie = gs.consulterGarderieID(id_egc);
     }
 
     public int getId() {
@@ -32,11 +37,11 @@ public class EvaluationGarderie {
     }
 
     public int getId_user() {
-        return id_user;
+        return this.Parent.getId();
     }
 
     public int getId_egc() {
-        return id_egc;
+        return this.Garderie.getId();
     }
 
     public void setId(int id) {
@@ -48,16 +53,16 @@ public class EvaluationGarderie {
     }
 
     public void setId_user(int id_user) {
-        this.id_user = id_user;
+        this.Parent.setId(id_user); 
     }
 
     public void setId_egc(int id_egc) {
-        this.id_egc = id_egc;
+        this.Garderie.setId(id_egc);
     }
 
     @Override
     public String toString() {
-        return "EvaluationGarderie{" + "id=" + id + ", note=" + note + ", id_user=" + id_user + ", id_egc=" + id_egc + '}';
+        return "EvaluationGarderie{" + "id=" + id + ", note=" + note + ", Parent={" + this.Parent.toString() + "}, Garderie={" + this.Garderie.toString() + "}}";
     }
     
 }

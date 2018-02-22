@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Presentation.ModifGarderieController">
+   <children>
+      <ImageView fitHeight="540.0" fitWidth="886.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Utils/images/pexels-photo-59720.jpeg" />
+         </image>
+      </ImageView>
+      <TextField fx:id="Site" layoutX="124.0" layoutY="146.0" prefHeight="38.0" prefWidth="250.0" promptText="Site" style="-fx-background-color: transparent;" />
+      <TextField fx:id="Email" layoutX="135.0" layoutY="205.0" prefHeight="25.0" prefWidth="228.0" promptText="Email" style="-fx-background-color: transparent;" />
+      <TextField fx:id="Tel" layoutX="162.0" layoutY="261.0" prefHeight="25.0" prefWidth="200.0" promptText="Téléphone" style="-fx-background-color: transparent;" />
+      <Label layoutX="20.0" layoutY="45.0" prefHeight="64.0" prefWidth="507.0" text=" Modifier ma garderie" textFill="WHITE">
+         <font>
+            <Font name="kindergarten" size="35.0" />
+         </font>
+      </Label>
+      <Label layoutX="71.0" layoutY="375.0" text="Logo :" textFill="WHITE">
+         <font>
+            <Font name="kindergarten" size="20.0" />
+         </font></Label>
+      <Label layoutX="69.0" layoutY="153.0" text="Site :" textFill="WHITE">
+         <font>
+            <Font name="kindergarten" size="20.0" />
+         </font></Label>
+      <Label layoutX="70.0" layoutY="206.0" text="Email :" textFill="WHITE">
+         <font>
+            <Font name="kindergarten" size="20.0" />
+         </font></Label>
+      <Label layoutX="69.0" layoutY="261.0" text="Téléphone:" textFill="WHITE">
+         <font>
+            <Font name="kindergarten" size="20.0" />
+         </font></Label>
+      <Label layoutX="69.0" layoutY="317.0" text="Description :" textFill="WHITE">
+         <font>
+            <Font name="kindergarten" size="20.0" />
+         </font></Label>
+      <TextArea fx:id="Description" layoutX="191.0" layoutY="322.0" prefHeight="38.0" prefWidth="192.0" promptText="Description" />
+      <Button fx:id="Annuler" layoutY="480.0" mnemonicParsing="false" onAction="#Annuler" prefHeight="59.0" prefWidth="49.0" style="-fx-background-color: transparent;">
+         <graphic>
+            <ImageView fitHeight="51.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Utils/images/Back_48px.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="Ajouter" layoutX="337.0" layoutY="462.0" mnemonicParsing="false" onAction="#Ajouter" prefHeight="64.0" prefWidth="74.0" style="-fx-background-color: transparent;">
+         <graphic>
+            <ImageView fitHeight="58.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Utils/images/Ok_48px.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <ImageView fx:id="img_logo" fitHeight="150.0" fitWidth="200.0" layoutX="135.0" layoutY="375.0" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="modif_logo" layoutX="73.0" layoutY="402.0" mnemonicParsing="false" onAction="#joindre" prefHeight="38.0" prefWidth="49.0" style="-fx-background-color: transparent;">
+         <graphic>
+            <ImageView fitHeight="65.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Utils/images/Attach_50px.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Label fx:id="label_erreur" layoutX="430.0" layoutY="487.0" prefHeight="17.0" prefWidth="344.0" textFill="RED" />
+   </children> 
+</AnchorPane>

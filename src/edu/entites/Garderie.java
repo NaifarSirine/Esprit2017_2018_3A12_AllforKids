@@ -5,6 +5,7 @@
  */
 package edu.entites;
 
+import Services.ProprietaireGarderieService;
 import java.net.URL;
 
 
@@ -21,7 +22,8 @@ public class Garderie {
     private String email ; 
     private String adresse ; 
     private String site ;
-    private int id_prop ;
+    private ProprietaireGarderie Proprietaire = new ProprietaireGarderie();
+    private ProprietaireGarderieService ps=new ProprietaireGarderieService();
     private String ville ;
     public Garderie() {}
     public Garderie(int id, String nom, String logo, String description, String numTel, String email, String adresse, String site, int id_prop, String ville) {
@@ -33,12 +35,23 @@ public class Garderie {
         this.email = email;
         this.adresse = adresse;
         this.site = site;
-        this.id_prop = id_prop;
+        Proprietaire= ps.consulterCompte(id_prop);
         this.ville = ville;
     }
 
    
-        
+    public int getId_prop()
+    {
+        return Proprietaire.getId();
+    }
+    public ProprietaireGarderie getProprietaire()
+    {
+        return Proprietaire;
+    }
+    public void setProprietaire(int id_prop)
+    {
+        this.Proprietaire=ps.consulterCompte(id_prop);
+    }
 
     public int getId() {
         return id;
@@ -70,10 +83,6 @@ public class Garderie {
 
     public String getSite() {
         return site;
-    }
-
-    public int getId_prop() {
-        return id_prop;
     }
 
     public String getVille() {
@@ -112,9 +121,6 @@ public class Garderie {
         this.site = site;
     }
 
-    public void setId_prop(int id_prop) {
-        this.id_prop = id_prop;
-    }
 
     public void setVille(String ville) {
         this.ville = ville;
@@ -122,7 +128,7 @@ public class Garderie {
 
     @Override
     public String toString() {
-        return "Garderie{" + "id=" + id + ", nom=" + nom + ", logo=" + logo + ", description=" + description + ", numTel=" + numTel + ", email=" + email + ", adresse=" + adresse + ", site=" + site + ", id_prop=" + id_prop + ", ville=" + ville + '}';
+        return "Garderie{" + "id=" + id + ", nom=" + nom + ", logo=" + logo + ", description=" + description + ", numTel=" + numTel + ", email=" + email + ", adresse=" + adresse + ", site=" + site + ", Proprietaire ==>{" +Proprietaire.toString() + "}, ville=" + ville + '}';
     }
     
     
